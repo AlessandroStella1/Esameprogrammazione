@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import it.univpm.ProgOggettiUnivpm.models.StatusResponse;
 
 @RestController
-public class statusRestController {
+public class StatusRestController {
 
 	@GetMapping("/status")
 	public StatusResponse CheckStatus() {
