@@ -36,11 +36,19 @@ public class DataController {
 				return response;
 			}
 			
-			// DataService service = new DataService();
+			if(filters.getDays() < 1 || filters.getDays() > 5)
+			{
+				BaseResponse response = new BaseResponse();
+				response.setSuccess(false);
+				response.setMessage("Prametro 'Days' non previsto, indicare un valore compreso tra: 1 e 5");
+				return response;
+			}
+			
 			DataResponse response = dataService.getMeteo(filters);  
 			response.setSuccess(true);
 			return response;
 		}
+		
 		catch (Exception ex)
 		{
 			BaseResponse response = new BaseResponse();

@@ -51,9 +51,12 @@ public class DataService {
 		ArrayList<OpenWeatherForecastWeather> forecastsSelect = new ArrayList<OpenWeatherForecastWeather>(); 
 		LocalDateTime startDate = LocalDateTime.now().truncatedTo(ChronoUnit.DAYS).plusDays(1).minusSeconds(1);
 		LocalDateTime endDate = LocalDateTime.now().truncatedTo(ChronoUnit.DAYS).plusDays(filters.getDays()+1).minusSeconds(1);
+		int referenceHour3 = Math.round(filters.getHour() / 3) * 3 + 1;
 		for (OpenWeatherForecastWeather forecast : owForecastResponse.getList()) {
 			if (forecast.getDate().isAfter(startDate) && forecast.getDate().isBefore(endDate)) {
-				forecastsSelect.add(forecast);
+				if (forecast.getDate().getHour() == referenceHour3) {
+					forecastsSelect.add(forecast);
+				}
 			}
 		}
 		
@@ -66,15 +69,9 @@ public class DataService {
 		
 		// condizioni meteo correnti
 		response.setWeather(new DataWeather(owWeatherResponse));
-		
 		// previsioni meteo, considero solo quelle selezionate e per la fascia oraria richiesta
-		Integer referenceHour3 = Math.round(filters.getHour() / 3) * 3 + 1;
 		for (OpenWeatherForecastWeather forecast : forecastsSelect) {
-			// preparo i dati da restituire
-			DataForecast data = new DataForecast(forecast);
-			if (data.getDate().getHour() == referenceHour3) {
-				response.getForecasts().add(data);
-			}
+			response.getForecasts().add(new DataForecast(forecast));
 		}
 			
 		// statistiche

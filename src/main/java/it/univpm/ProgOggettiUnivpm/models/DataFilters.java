@@ -13,6 +13,9 @@ public class DataFilters {
 
 	private String cityName;
 	private Integer hour;
+	/**
+	 * numero di giorni richiesti dall'utente per le previsioni meteo 
+	 */
 	private Integer days;	
 	
 	@JsonProperty("cityName")
@@ -35,6 +38,9 @@ public class DataFilters {
 		this.hour = hour;
 	}
 
+	/**
+	 * numero di giorni richiesti dall'utente per le previsioni meteo 
+	 */
 	public Integer getDays() {
 		return days;
 	}
