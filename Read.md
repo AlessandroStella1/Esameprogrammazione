@@ -63,8 +63,8 @@ Nel progetto viene utilizzato il database H2 (in realtà nato per fornire suppor
 Questo database in genere viene eseguito in memoria e ricreato ad ogni avvio dell'applicazione.
 Per simulare il comportamento di un ambiene reale, è stata modificata la configurazione application.properties direttando il salvataggio del database su file:
 ```
-- da -&gt; spring.datasource.url=jdbc:h2:mem:~/test
-- a -&gt; spring.datasource.url=jdbc:h2:file:./repository
+- da -> spring.datasource.url=jdbc:h2:mem:~/test
+- a -> spring.datasource.url=jdbc:h2:file:./repository
 ```
 Al riavvio i dati e la struttura del database risultano persistenti
 
@@ -73,11 +73,26 @@ Rif:
 * https://howtodoinjava.com/spring-boot2/hibernate-configuration-example/
 
 
+
+
+
 <img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-richiesta-meteo.png?raw=true">
+
+
+
+
 
 <img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-task.png?raw=true">
 
+
+
+
+
 <img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-utente.png?raw=true">
+
+
+
+
 
 
                     
