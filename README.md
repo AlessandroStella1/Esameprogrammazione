@@ -97,13 +97,90 @@ Rif:
 
 
                     
-## Esempio tabella output
+## Esempio tabella dei campionamenti 
                    
 ID | CITY_ID | CITY_NAME | DATE | DATE_EPOCH | FEELS_LIKE | HUMIDITY | PRESSURE | TEMP_MAX | TEMP_MIN | TEMPERATURE | WEATHER
 ---|----------|--------------|--------|-------------|------------|---------|---------|--------|--------|--------|--
 1 | 2177915 | ANCONA | 2021-01-14 18:00:00| 1610641815 | 8.09000015258789 | 85 | 1007 | 10.5600004196167 | 8.890000343322754 | 9.8100004196167| Clear
 2 | 6127261 | ROMA | 2021-01-14 18:00:00 | 1610641816 | -14.25| 63 | 1024 | -5.0 | -5.0 | -5.0| Clouds
 3 | 2525068 | Catania | 2021-01-14 18:00:00 | 1610645005 | 9.359999656677246 | 77 | 1010 | 15.0 | 12.779999732971191 | 13.699999809265137 | Clouds
+
+# Endpoints
+
+## Data
+
+```
+{
+"success": true,
+"message": null,
+"cityId": 3183087,
+"cityName": "Provincia di Ancona",
+"latitude": 43.55,
+"longitude": 13.1667,
+"weather": {
+"temp": 6.27,
+"tempMin": 4,
+"tempMax": 7.78,
+"pressure": 1019,
+"humidity": 87
+},
+"forecast": [
+{
+"temp": 8.34,
+"tempMin": 8.34,
+"tempMax": 8.34,
+"pressure": 1013,
+"humidity": 72,
+"date": "2021-01-21T22:00:00"
+},
+{
+"temp": 10.9,
+"tempMin": 10.9,
+"tempMax": 10.9,
+"pressure": 997,
+"humidity": 84,
+"date": "2021-01-22T22:00:00"
+},
+{
+"temp": 7.28,
+"tempMin": 7.28,
+"tempMax": 7.28,
+"pressure": 995,
+"humidity": 67,
+"date": "2021-01-23T22:00:00"
+},
+{
+"temp": 5,
+"tempMin": 5,
+"tempMax": 5,
+"pressure": 994,
+"humidity": 92,
+"date": "2021-01-24T22:00:00"
+},
+{
+"temp": 3.65,
+"tempMin": 3.65,
+"tempMax": 3.65,
+"pressure": 1013,
+"humidity": 73,
+"date": "2021-01-25T22:00:00"
+}
+],
+"statistics": {
+"tempMin": 3.65,
+"tempMax": 14.1,
+"tempAvg": 4.48256,
+"pressureMin": 993,
+"pressureMax": 1019,
+"pressureAvg": 1010,
+"humidityMin": 53,
+"humidityMax": 92,
+"humidityAvg": 72
+}
+}
+
+```
+
 
 ## Software utilizzati
 * #### [IDE Eclipse](https://www.eclipse.org/) - per lo sviluppo e la scrittura dell'intero codice del programma
