@@ -75,6 +75,8 @@ Rif:
 
 
 
+
+
 <img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-richiesta-meteo.png?raw=true">
 
 
