@@ -44,7 +44,7 @@ public class StatisticsController {
 			
 			List<EntityWeatherSample> samples = null;
 			if (filters.getCityId() != null) {
-				// statistiche su tutte le rilevazioni a partire dalla data per la città richeista
+				// statistiche su tutte le rilevazioni a partire dalla data per la città richiesta
 				samples = entityWeatherSampleRepository.findByCityIdAndForecastDaysAndDateGreaterThanEqual(filters.getCityId(), 0, startDate);
 			}
 			else {

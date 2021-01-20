@@ -11,6 +11,17 @@ public class MetadataResponse {
 		this.datas = new ArrayList<MetadataElement>();
 		this.stats = new ArrayList<MetadataElement>();
 		
+		this.datas.add(new MetadataElement("cityId", "Id della città"));
+		this.datas.add(new MetadataElement("", ""));
+		this.datas.add(new MetadataElement("", ""));
+		this.datas.add(new MetadataElement("", ""));
+		this.datas.add(new MetadataElement("weather", "condizioni meteo attuali"));
+		this.datas.add(new MetadataElement("forecast", "previsioni meteo"));
+		this.datas.add(new MetadataElement("temp", "temperature corrente"));
+		this.datas.add(new MetadataElement("", ""));
+		this.datas.add(new MetadataElement("statistics", "statistiche sui periodi richiesti"));
+		this.datas.add(new MetadataElement("", ""));
+		
 		this.stats.add(new MetadataElement("startDate", "Data di del primo periodo rilevato"));
 		this.stats.add(new MetadataElement("countSamples", "Numeri di rilevamenti individuati in base ai filtri di ricerca"));
 		this.stats.add(new MetadataElement("avgTemperature", "Temperature media calcolata sui rilevamenti estratti"));

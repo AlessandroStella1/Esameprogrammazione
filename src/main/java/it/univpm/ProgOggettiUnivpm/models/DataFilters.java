@@ -4,6 +4,11 @@ import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Classe filtro utilizzata come parametro per la ricerca del meteo di una città.
+ * @author
+ *
+ */
 public class DataFilters {
 
 	public DataFilters() {
@@ -11,10 +16,16 @@ public class DataFilters {
 		this.days = 5;
 	}
 
+	/**
+	 * Nome della città per cui eseguire la ricerca meteo.
+	 */
 	private String cityName;
+	/**
+	 * Orario richiesto per la ricerca delle previsioni meteo. Come default assume l'orario dell'esecuzione della ricerca.
+	 */
 	private Integer hour;
 	/**
-	 * numero di giorni richiesti dall'utente per le previsioni meteo 
+	 * numero di giorni richiesti dall'utente per le previsioni meteo. Come default assume il valore 5. I valori ammessi vanno da 1 a 5.
 	 */
 	private Integer days;	
 	

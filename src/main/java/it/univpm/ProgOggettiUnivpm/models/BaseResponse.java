@@ -2,8 +2,19 @@ package it.univpm.ProgOggettiUnivpm.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Classe di base per le risposte dei servizi, restituisce l'esito dell'elaborazione e 
+ * l'eventuale messaggio di errore.
+ *
+ */
 public class BaseResponse {
+	/**
+	 * Esito dell'elaborazione: true in caso di esito positivo e false in caso di errore. 
+	 */
 	private Boolean success;
+	/**
+	 * Messaggio di errore.
+	 */
 	private String message;
 	
 	@JsonProperty("success")
