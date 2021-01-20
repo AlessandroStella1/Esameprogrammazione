@@ -73,11 +73,11 @@ Rif:
 * https://howtodoinjava.com/spring-boot2/hibernate-configuration-example/
 
 
-&lt;img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-richiesta-meteo.png?raw=true"&gt;
+< img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-richiesta-meteo.png?raw=true" >
 
-&lt;img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-task.png?raw=true"&gt;
+< img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-task.png?raw=true">
 
-&lt;img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-utente.png?raw=true"&gt;
+< img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-utente.png?raw=true">
 
 
                     
