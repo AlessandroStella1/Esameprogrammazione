@@ -49,9 +49,6 @@ public class DataFilters {
 		this.hour = hour;
 	}
 
-	/**
-	 * numero di giorni richiesti dall'utente per le previsioni meteo 
-	 */
 	public Integer getDays() {
 		return days;
 	}

@@ -1,5 +1,10 @@
 package it.univpm.ProgOggettiUnivpm.models;
 
+/**
+ * Classe filtro per il servizio statistics.
+ *
+ */
+
 public class StatsFilters {
 
 	public StatsFilters() {

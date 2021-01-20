@@ -11,6 +11,11 @@ import javax.persistence.Table;
 
 import it.univpm.ProgOggettiUnivpm.models.ow.OpenWeatherBaseWeather;
 
+/**
+ * Classe di accesso al database per il campionamento delle condizioni meteo.
+ *
+ */
+
 @Entity
 @Table(name="cw_samples")
 public class EntityWeatherSample {
@@ -24,7 +29,10 @@ public class EntityWeatherSample {
 	@Column(name="city_name")
 	private String cityName;
 	
-	// se 0 indica il meteo corrente, se > 0 indica la previsione
+	/**
+	 * Numero di giorni della previsione meteo, se vale 0 rappresenta le condizioni meteo attuali, se maggiore di 0 rappresenta la previsione
+	 * per il numero di giorni indicati nel campo.
+	 */
 	@Column(name="forecast_days")
 	private Integer forecastDays; 
 	

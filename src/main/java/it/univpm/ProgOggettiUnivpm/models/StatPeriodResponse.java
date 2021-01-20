@@ -2,6 +2,11 @@ package it.univpm.ProgOggettiUnivpm.models;
 
 import java.time.LocalDate;
 
+/**
+ * Classe di risposta restituita dal servizio statistics.
+ *
+ */
+
 public class StatPeriodResponse {
 	
 	private StatsFilters.PeriodType periodType;

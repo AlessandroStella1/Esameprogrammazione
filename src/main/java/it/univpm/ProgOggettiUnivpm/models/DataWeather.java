@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import it.univpm.ProgOggettiUnivpm.models.ow.OpenWeatherCurrentResponse;
 
+/**
+ * Classe utilizzata nella risposta servizio data per le condizioni meteo correnti.
+ * @author 
+ *
+ */
+
 public class DataWeather {
 	
 	public DataWeather() {		
@@ -17,10 +23,25 @@ public class DataWeather {
 		this.humidity = weather.getMain().getHumidity();
 	}
 	
+	/**
+	 * Temperatura corrente.
+	 */
 	private float temp;
+	/**
+	 * Temperatura minima.
+	 */
 	private float tempMin;
+	/**
+	 * Temperatura massima.
+	 */
 	private float tempMax;
+	/**
+	 * Pressione corrente.
+	 */
 	private int pressure;
+	/**
+	 * Umidità corrente.
+	 */
 	private int humidity;
 	
 	@JsonProperty("tempMin")

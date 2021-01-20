@@ -5,6 +5,11 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Elenco delle chiavi json restituite dai servizi.
+ *
+ */
+
 public class MetadataResponse {
 	
 	public MetadataResponse() {
@@ -29,7 +34,13 @@ public class MetadataResponse {
 		this.stats.add(new MetadataElement("minTemperature", "Temperature massima calcolata sui rilevamenti estratti"));
 	}
 	
+	/**
+	 * Chiavi json restituite dal servizio data.
+	 */
 	private List<MetadataElement> datas;
+	/**
+	 * Chiavi json restituite dal servizio statistics.
+	 */
 	private List<MetadataElement> stats;
 
 	@JsonProperty("datas")

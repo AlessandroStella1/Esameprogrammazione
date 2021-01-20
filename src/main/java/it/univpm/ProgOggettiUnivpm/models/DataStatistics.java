@@ -6,6 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import it.univpm.ProgOggettiUnivpm.models.ow.OpenWeatherForecastWeather;
 
+/**
+ * Classe utilizzata nella risposta del servizio data per le statistiche.
+ * @author 
+ *
+ */
 public class DataStatistics {
 
 	public DataStatistics() {		
@@ -53,16 +58,43 @@ public class DataStatistics {
 		}
 	}
 
+	/**
+	 * Temperatura minima.
+	 */
 	private Float tempMin;
+	/**
+	 * Temperatura massima.
+	 */
 	private Float tempMax;
+	/**
+	 * Temperatura media.
+	 */
 	private Float tempAvg;
 
+	/**
+	 * Pressione minima.
+	 */
 	private Integer pressureMin;
+	/**
+	 * Pressione massima.
+	 */
 	private Integer pressureMax;
+	/**
+	 * Pressione media.
+	 */
 	private Integer pressureAvg;
 
+	/**
+	 * Umidità minima.
+	 */
 	private Integer humidityMin;
+	/**
+	 * Umidità massima.
+	 */
 	private Integer humidityMax;
+	/**
+	 * Umidità media.
+	 */
 	private Integer humidityAvg;
 
 	@JsonProperty("tempMin")

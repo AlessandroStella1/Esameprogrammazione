@@ -7,6 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import it.univpm.ProgOggettiUnivpm.models.ow.OpenWeatherForecastWeather;
 
+/**
+ * Classe di risposta del servizio /data.
+ * @author
+ *
+ */
 public class DataForecast {
 	public DataForecast() {
 		
@@ -21,13 +26,33 @@ public class DataForecast {
 		this.humidity = forecast.getMain().getHumidity();
 	}
 	
+	/**
+	 * Data della previsione corrente.
+	 */
+	
 	private Long dt;
 
+	/**
+	 * Temperature stimata.
+	 */
 	private float temp;
+	/**
+	 * Temperature minima stimata.
+	 */
 	private float tempMin;
+	/**
+	 * Temperature massima stimata.
+	 */
 	private float tempMax;
+	/**
+	 * Pressione stimata.
+	 */
 	private int pressure;
+	/**
+	 * Umidità stimata.
+	 */
 	private int humidity;
+	
 
 	@JsonProperty("date")
 	public LocalDateTime getDate() {

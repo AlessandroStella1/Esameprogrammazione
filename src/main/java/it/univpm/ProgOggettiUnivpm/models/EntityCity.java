@@ -7,6 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Classe di accesso al database per le entità city.
+ * @author 
+ *
+ */
+
 @Entity
 @Table(name="cw_cities")
 public class EntityCity {

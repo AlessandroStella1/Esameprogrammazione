@@ -2,6 +2,11 @@ package it.univpm.ProgOggettiUnivpm.models;
 
 import java.time.LocalDateTime;
 
+/**
+ * Classe di risposta del servizio del controllo dello stato.
+ *
+ */
+
 public class StatusResponse {
 
 	private String Status;

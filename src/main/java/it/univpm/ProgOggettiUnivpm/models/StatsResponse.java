@@ -3,6 +3,11 @@ package it.univpm.ProgOggettiUnivpm.models;
 import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Classe utilizzata come risposta dal servizio statistics.
+ *
+ */
+
 public class StatsResponse extends BaseResponse {
 	
 	private LocalDateTime startDate;
