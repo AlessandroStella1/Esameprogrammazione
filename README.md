@@ -97,7 +97,7 @@ Rif:
 
 
                     
-## Esempio tabella output
+## Esempio tabella dei campionamenti 
                    
 ID | CITY_ID | CITY_NAME | DATE | DATE_EPOCH | FEELS_LIKE | HUMIDITY | PRESSURE | TEMP_MAX | TEMP_MIN | TEMPERATURE | WEATHER
 ---|----------|--------------|--------|-------------|------------|---------|---------|--------|--------|--------|--
