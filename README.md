@@ -1,5 +1,3 @@
-##README
-
 # Struttura 
 
 Il programma è strutturato sulla base delle seguenti macro componenti
@@ -107,11 +105,11 @@ ID | CITY_ID | CITY_NAME | DATE | DATE_EPOCH | FEELS_LIKE | HUMIDITY | PRESSURE 
 
 ## Software utilizzati
 * #### [IDE Eclipse](https://www.eclipse.org/) - per lo sviluppo e la scrittura dell'intero codice del programma
-* ### [Framework Spring](https://spring.io/projects/spring-framework) - framework concepito per lo sviluppo di applicazioni enterprise
+* #### [Framework Spring](https://spring.io/projects/spring-framework) - framework concepito per lo sviluppo di applicazioni enterprise
 * #### [Maven](https://maven.apache.org/) - per un'organizzazione efficiente e una semplificazione del progetto in Java
-* ####[Diagrams.Net](https://www.diagrams.net) - per creare e modellare i diagrammi UML
-* ####[JUnit](https://junit.org/junit5/) - per svolgere gli Unit Test
-* ####[OpenWeather](https://openweathermap.org/forecast5) - per ottenere le informazioni metereologiche 
+* #### [Diagrams.Net](https://www.diagrams.net) - per creare e modellare i diagrammi UML
+* #### [JUnit](https://junit.org/junit5/) - per svolgere gli Unit Test
+* #### [OpenWeather](https://openweathermap.org/forecast5) - per ottenere le informazioni metereologiche 
 
 ## Autori & contributo
 [Matteo Albanesi](https://github.com/MatteoAlbanesi) - 50%                                                             
