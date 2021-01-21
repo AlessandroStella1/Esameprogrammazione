@@ -1,18 +1,18 @@
 # Struttura 
 
-Il programma è strutturato sulla base delle seguenti macro componenti
-- controllers, espongono le api, definiscono le routes, implementano le logiche di controllo dei parametri, coordinano i servizi che si occupano delle elaborazioni sulla base dei parametri ricevuti
-- models "ow", sono i modelli per la gestione delle risposte di openweather, gli attributi delle classi hanno la stessa struttura delle risposte JSON di Openweather, le classi sono nidificate tra loro come le strutture del JSON.
-               con questa struttura Spring riesce a valorizzare automaticamente le proprietà delle classi in base al JSON ricevuto da Opwnweather
-- models prefisso "entity", sono le classi che consentono un accesso semplificato al database H2 tramite i servizi Repository 
+Il programma è strutturato sulla base delle seguenti macro componenti:
+- controllers, espongono le api, definiscono le routes, implementano le logiche di controllo dei parametri, coordinano i servizi che si occupano delle elaborazioni sulla base dei parametri ricevuti.
+- models "ow", sono i modelli per la gestione delle risposte di OpenWeather, gli attributi delle classi hanno la stessa struttura delle risposte JSON di OpenWeather, le classi sono nidificate tra loro come le strutture del JSON.
+               Con questa struttura Spring riesce a valorizzare automaticamente le proprietà delle classi in base al JSON ricevuto da OpwnWeather.
+- models prefisso "entity", sono le classi che consentono un accesso semplificato al database H2 tramite i servizi Repository.
 - models, sono le classi utilizzate dai servizi interni di elaborazione
-- services, sono le classi che definiscono le logiche di funzionamento del servizio
-	* OpenWeatherClient, si occupa di eseguire le chiamate alle API di Openweather
+- services, sono le classi che definiscono le logiche di funzionamento del servizio.
+	* OpenWeatherClient, si occupa di eseguire le chiamate alle API di OpenWeather
 	* Configuration, carica la configurazione del progetto da config.json
 	* Repository, classi che implementano le operazioni base sul db H2 (operazioni CRUD: Create, read, update and delete)
 	* OpenWeatherTask, esegue le operazioni in base alla pianificazione configurata
-	* DataService, invoca il servizio di Forecast e del meteo corrente di Openweather, elabora i dati e prepara le risposta per l'utente
-	* StatsService, analizza i dati storici e fa una valutazione dell'affidabilità delle previsioni, prepara la risposta per il client.
+	* DataService, invoca il servizio di Forecast e del meteo corrente di OpenWeather, elabora i dati e prepara le risposta per l'utente
+	* StatsService, analizza i dati storici e fa una valutazione dell'affidabilità delle previsioni, prepara la risposta per il client
 
 
 # Funzionamento
@@ -21,7 +21,7 @@ In fase di avvio il programma legge il file di configurazione e carica in databa
 Se il file di configurazione è corretto viene avviato il server web e il processo che si occupa di eseguire i Task pianificati.
 Il Task, con cadenza di 30 minuti, per ogni città presente in database (in base al config.json) esegue le chiamate ad OpenWeather per registrare il meteo corrente e le previsioni a 5 giorni.
 
-Le Api in ascolto consentono all'utente di richiedere il memeo corrente e le previsioni per una qualsiasi città: la richiesta viene infatti inoltrata a Openweather e la risposta rielabotrata.
+Le Api in ascolto consentono all'utente di richiedere il meteo corrente e le previsioni per una qualsiasi città: la richiesta viene infatti inoltrata a OpenWeather e la risposta rielabotrata.
 Alla prima interrogazione di una nuova città, questa viene inserita nel database del monitoraggio, il task si occupa quindi di registrare i dati per tutte le città presenti nel file di configurazione e per tutte le nuove città interrogate dagli utenti che accedono ai servizi esposti.  
 
 I dati presenti in DB vengono utilizzati per determinare l'affidabilità del servizio meteo confrontando la precisione della stima fornita da OpenWeather rispetto al meteo reale registrato nei giorni successivi a quelli della previsione.
@@ -31,7 +31,7 @@ I dati presenti in DB vengono utilizzati per determinare l'affidabilità del ser
 
 ## Spring
 Spring consente di "annotare" i componenti tramite delle parole chiave che identificano lo scopo e il funzionamento di base di una classe.
-I componenti Spring derivano dal componente base @Componet e possono essere di tipo @Component, @Services ecc questo identificativo è necessario affinchè Spring possa tipizzare la classe
+I componenti Spring derivano dal componente base @Componet e possono essere di tipo @Component, @Services ecc questo identificativo è necessario affinchè Spring possa tipizzare la classe.
 Un oggetto di tipo @Component può utilizzare al suo interno degli oggetti auto istanziati, questi oggetti vanno marcati con l'attributo @Autowired, in questo modo Spring capisce che deve istanziare la classe automaticamente e sarà disponibile all'interno della classe stessa. 
 
 Rif: https://docs.spring.io/spring-framework
@@ -53,14 +53,11 @@ Spring fornisce una gestione automatica per la pianificazione dei processi, è i
 Rif: 
 * https://spring.io/guides/gs/scheduling-tasks/
 
-## Singleton
-Il singleton rappresenta un tipo particolare di classe che garantisce che soltanto un’unica istanza della classe stessa possa essere creata all’interno di un programma.
-
 
 ## Database
 Nel progetto viene utilizzato il database H2 (in realtà nato per fornire supporto ai test automatici).
 Questo database in genere viene eseguito in memoria e ricreato ad ogni avvio dell'applicazione.
-Per simulare il comportamento di un ambiene reale, è stata modificata la configurazione application.properties direttando il salvataggio del database su file:
+Per simulare il comportamento di un ambiente reale, è stata modificata la configurazione application.properties dirottando il salvataggio del database su file:
 ```
 - da -> spring.datasource.url=jdbc:h2:mem:~/test
 - a -> spring.datasource.url=jdbc:h2:file:./repository
@@ -111,72 +108,72 @@ ID | CITY_ID | CITY_NAME | DATE | DATE_EPOCH | FEELS_LIKE | HUMIDITY | PRESSURE 
 
 ```
 {
-"success": true,
-"message": null,
-"cityId": 3183087,
-"cityName": "Provincia di Ancona",
-"latitude": 43.55,
-"longitude": 13.1667,
-"weather": {
-"temp": 6.27,
-"tempMin": 4,
-"tempMax": 7.78,
-"pressure": 1019,
-"humidity": 87
-},
-"forecast": [
-{
-"temp": 8.34,
-"tempMin": 8.34,
-"tempMax": 8.34,
-"pressure": 1013,
-"humidity": 72,
-"date": "2021-01-21T22:00:00"
-},
-{
-"temp": 10.9,
-"tempMin": 10.9,
-"tempMax": 10.9,
-"pressure": 997,
-"humidity": 84,
-"date": "2021-01-22T22:00:00"
-},
-{
-"temp": 7.28,
-"tempMin": 7.28,
-"tempMax": 7.28,
-"pressure": 995,
-"humidity": 67,
-"date": "2021-01-23T22:00:00"
-},
-{
-"temp": 5,
-"tempMin": 5,
-"tempMax": 5,
-"pressure": 994,
-"humidity": 92,
-"date": "2021-01-24T22:00:00"
-},
-{
-"temp": 3.65,
-"tempMin": 3.65,
-"tempMax": 3.65,
-"pressure": 1013,
-"humidity": 73,
-"date": "2021-01-25T22:00:00"
-}
-],
-"statistics": {
-"tempMin": 3.65,
-"tempMax": 14.1,
-"tempAvg": 4.48256,
-"pressureMin": 993,
-"pressureMax": 1019,
-"pressureAvg": 1010,
-"humidityMin": 53,
-"humidityMax": 92,
-"humidityAvg": 72
-}
+    "success": true,
+    "message": null,
+    "cityId": 3183087,
+    "cityName": "Provincia di Ancona",
+    "latitude": 43.55,
+    "longitude": 13.1667,
+    "weather": {
+        "temp": 6.27,
+        "tempMin": 4,
+        "tempMax": 7.78,
+        "pressure": 1019,
+        "humidity": 87
+    },
+    "forecast": [
+        {
+            "temp": 8.34,
+            "tempMin": 8.34,
+            "tempMax": 8.34,
+            "pressure": 1013,
+            "humidity": 72,
+            "date": "2021-01-21T22:00:00"
+        },
+        {
+            "temp": 10.9,
+            "tempMin": 10.9,
+            "tempMax": 10.9,
+            "pressure": 997,
+            "humidity": 84,
+            "date": "2021-01-22T22:00:00"
+        },
+        {
+            "temp": 7.28,
+            "tempMin": 7.28,
+            "tempMax": 7.28,
+            "pressure": 995,
+            "humidity": 67,
+            "date": "2021-01-23T22:00:00"
+        },
+        {
+            "temp": 5,
+            "tempMin": 5,
+            "tempMax": 5,
+            "pressure": 994,
+            "humidity": 92,
+            "date": "2021-01-24T22:00:00"
+        },
+        {
+            "temp": 3.65,
+            "tempMin": 3.65,
+            "tempMax": 3.65,
+            "pressure": 1013,
+            "humidity": 73,
+            "date": "2021-01-25T22:00:00"
+        }
+    ],
+    "statistics": {
+        "tempMin": 3.65,
+        "tempMax": 14.1,
+        "tempAvg": 4.48256,
+        "pressureMin": 993,
+        "pressureMax": 1019,
+        "pressureAvg": 1010,
+        "humidityMin": 53,
+        "humidityMax": 92,
+        "humidityAvg": 72
+    }
 }
 
 ```
