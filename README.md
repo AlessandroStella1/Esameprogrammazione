@@ -71,8 +71,8 @@ Rif:
 
 
 
-
-
+## Schema funzionamento applicazione
+L'utente inserendo in input come parametro il cityName=<city> richiede all'endpoint Data le previsioni meteo per la città scelta. Il sistema inoltre applica un filtro in base al numero dei giorni per cui l'utente ha chiesto le previsioni (da 1 a 5) e all'orario di cui restiturle:
 
 <img src="https://github.com/AlessandroStella1/Esameprogrammazione/blob/main/processo-richiesta-meteo.png?raw=true">
 
